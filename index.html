@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/7f91ac7876.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;    
+          }
+      html,
+      body { padding: 0; margin: 0; height: 100%; }
+      /* body { position: relative; background-image: linear-gradient(135deg, #f97794 10%, #c43d3df3 100%);
+            @include flex-center;
+            &:before {
+              content: "";
+              position: absolute;
+              top: 50%;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              border-top: 1px solid rgba(255, 255, 255, 0.2);
+              background: rgba(255, 255, 255, 0.06);
+              backdrop-filter: blur(5px);
+              z-index: -1;
+            }
+          } */
+          
+          
+          /* Create three unequal columns that floats next to each other */
+          .column {
+            float: left;
+          
+            height: 655px; /* Should be removed. Only for demonstration */
+            
+            
+          }
+          
+          .left{
+              width: 7%;
+              
+              
+          } 
+          .right {
+            width: 27%;
+       
+           
+
+          }
+          .h1 .p{
+color: black;
+          }
+.logo{
+  height: 85px;
+  width: 450px;
+ 
+  
+  
+}   
+          
+          .middle {
+            width: 66%;
+          }
+
+          #menu__toggle {
+            opacity: 0;
+          }
+          #menu__toggle:checked + .menu__btn > span {
+            transform: rotate(45deg);
+          }
+          #menu__toggle:checked + .menu__btn > span::before {
+            top: 0;
+            transform: rotate(0deg);
+          }
+          #menu__toggle:checked + .menu__btn > span::after {
+            top: 0;
+            transform: rotate(90deg);
+          }
+          #menu__toggle:checked ~ .menu__box {
+            left: 0 !important;
+          }
+          .menu__btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            z-index: 1;
+          }
+          .menu__btn > span,
+          .menu__btn > span::before,
+          .menu__btn > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: #ffffff;
+            transition-duration: .25s;
+          }
+          .menu__btn > span::before {
+            content: '';
+            top: -8px;
+          }
+          .menu__btn > span::after {
+            content: '';
+            top: 8px;
+          }
+          .menu__box {
+            display: block;
+            position: fixed;
+            top: 23px;
+            left: -100%;
+            width: 280px;
+            height: 70%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            background-image: linear-gradient(150deg,#79e0b5 12%,#FFA500 25%,#F14444 45%,#D53567 55%,#e78c9b 35%);  /*#9b1d6a*/
+           
+            transition-duration: .25s;
+          }
+          .b1, .b2, .b3, .b4, .b5, .b5, .b6, .b7 {
+            display: block;
+            padding: 12px 24px;
+            color: rgb(255, 255, 255);
+            background-color: transparent;
+            font-family: 'Roboto', sans-serif;
+           
+            width: 260px;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            transition-duration: .25s;
+          }
+          .b1:hover {
+            background-color: #259179;
+          }
+           .b2:hover {
+            background-color: #259179;
+          }
+           .b3:hover {
+            background-color: #259179;
+          }
+           .b4:hover {
+            background-color: #259179;
+          } .b5:hover {
+            background-color: #259179;
+          }
+           .b5:hover {
+            background-color: #259179;
+          } 
+          .b6:hover {
+            background-color: #259179;
+          }
+          
+          
+          .b7:hover {
+            background-color: #259179;
+          }
+          .content {
+            
+            width: 300px;
+            height: 200px;
+          }
+          
+   #key{
+      display: none;
+      position: fixed;
+      top: 60%;
+      left: 25%;
+      margin-top: -50px;
+      margin-left: -100px;
+     
+   }
+   
+  
+   #mic{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 35%; 
+    margin-top: -50px;
+    margin-left: -100px;
+   }  
+   #cam{
+    display: none;
+    position: fixed;
+    top: 45%;
+    left: 40%;
+    margin-top: -50px;
+    margin-left: -100px;
+
+   }
+
+          
+          #second, #third, #fourth, #fifth, #sixth, #seventh{
+            display: none
+          }
+          
+          button {
+            outline: none;
+          }
+  .content img {
+      vertical-align: middle;
+      margin-top: 0;
+      width: 355px;
+      height: 380px;
+      
+}
+.content .desc{
+    position: absolute;
+  bottom: 42%;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(219, 216, 223, 0.8); /* Black background with 0.5 opacity */
+  color: #080808;
+  width: 360px;
+  padding: 20px;
+}   
+
+
+.dropbtn {
+  background-color: #f97794;
+  color: white;
+  padding: 16px;
+  font-size: 25px;
+  border: none;
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  bottom: 50px;
+  z-index: 1;
+ 
+}
+
+.dropup-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropup-content a:hover {background-color: rgb(19, 229, 236)}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+.dropup:hover .dropbtn {
+  background-color: #ac0c64;
+}
+
+#bottom {
+  position: absolute;
+  bottom: 9px;
+  left: 8px;
+  width: 7%;
+}
+
+/* Search Bar and OUt Box Start Here */
+#searchbar{
+  margin-left: 10%;
+  padding:15px;
+  height: 95px;
+  border-radius: 10px;
+  margin-top: 3px;
+  border: none;
+ 
+
+}
+
+input[type=text] {
+   width: 70%;
+   -webkit-transition: width 0.15s ease-in-out;
+   transition: width 0.15s ease-in-out;
+   
+}
+
+
+
+/* When the input field gets focus,
+     change its width to 100% 
+input[type=text]:focus {
+  width: 60%;
+  position: absolute;
+  
+}*/
+
+#list{
+ font-size:  1.5em;
+ margin-left: 90px;
+margin-top: -68px;
+
+}
+
+.animals{
+display: list-item;    
+
+} 
+/* Search Bar and OUt Box Finish Here */
+
+.center-top{
+
+  width: 65%;
+  height: 60px;
+  top: 8.2px;
+  left: 105px;
+}
+
+.first-center{
+
+  margin-top: 50px;
+  height: 100px;
+  
+}
+
+
+.second-center{
+   
+  margin-top: 70px;
+
+    width: 100%;
+    height: auto;  
+    left: 13%;
+}
+hr.solid {
+      border-top: 10px solid #f0ebf1;
+    }   
+#calr{
+  position: absolute;
+  bottom: 0;
+  height: 42%;
+  width: 27%;
+}
+
+    </style>
+</head>
+<body>
+    <div class="wrapper"> <!--Wrapper In-->
+        <div class="column left" style="background-image: linear-gradient(10deg, #f97794 10%, #f09c9cf3 100%);"> <!--Body left section In-->
+                   
+            <div class="container"> <!--Hamburger menu button In-->
+                
+              <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                <span></span>
+                </label>
+            
+                <ul class="menu__box">
+                  <button class="b1" onClick="myFunction()">Basic Mathamatics</button>
+                  <button class="b2" onClick="myFunction1()">Number System</button>
+                  <button class="b3" onClick="myFunction2()">Algebra</button>
+                  <button class="b4" onClick="myFunction3()">Trigonometry</button>
+                  <button class="b5" onClick="myFunction4()">Calculus</button>
+                  <button class="b6" onClick="myFunction5()">Statistics</button>
+                  <button class="b7" onClick="myFunction6()">Geometry</button>
+                </ul>
+            </div>
+                
+              </div> <!--Hamburger menu button Out-->
+              <div class="left-sec-buttom" id="bottom"> <!--left section buttom In-->
+                          <div class="dropup"> <!--Setting Button In-->
+                            <button class="dropbtn"><i class="fa fa-users-gear"></i></button>
+                            <div class="dropup-content">
+                              <a href="#">Settings</a>
+                              <a href="#">Help & Feedback </a>
+                              <a href="#">Contact Us</a>
+                            </div>
+                          </div> <!--Setting Button Out-->
+                                        </div> <!--left section buttom Out-->
+              
+        </div> <!--Body left section Out-->
+        <div class="column middle"  style=" background-image: linear-gradient(10deg, #ecd7dc 10%, #f09c9cf3 100%);"> <!--Body Center section In-->
+
+          <div class="center-top" style=" background-color:linear-gradient(160deg, #ecd7dc 10%, #f09c9cf3 90%);  height: 80px; width: 100%;"> <!--Body Center top In-->
+            <img class="logo" src="logo.jpg" alt="logo">
+
+           <a href="\MM\admin\index.php"> <button class="button1 " style="border: none; padding: 16px; font-size: 25px; background:none; float:right "><i class="fa fa-user-graduate"></i></button></a>
+            
+        </div> <!--Body Center top Out-->
+
+
+                       <div class="schcont" style="" > <!--Search Bar and Output Section In-->
+                        <div class="ribon" style="position:relative; float:right; margin-top: 0;"> <!-- Icons Ribon In-->
+
+                          
+                            <button class="button1 " onClick="myFunction7()" style="border: none; padding: 10px; font-size: 25px; background:#fff; "><i class="fa-solid fa-keyboard"></i></button>
+                           <button class="button1 " onClick="myFunction8()" style="border: none; padding: 10px; font-size: 25px; background:#fff; "><i class="fa-solid fa-microphone-lines"></i></button>
+                              <button class="button1 " onClick="myFunction9()" style="border: none; padding: 10px; font-size: 25px; background:#fff; "><i class="fa-solid fa-camera"></i></button>
+                        
+                         
+
+                          <div id="key" style="opacity: 0.5;">
+                            <img src="key.jpg"/> 
+                          </div>
+                          <div id="mic" >
+                            <img src="mic.gif" width="40%" /> 
+                          </div>
+                          <div id="cam">
+                            <img src="cam.gif"/> 
+                          </div>
+
+                        </div> <!-- Icons Ribon Out-->
+                       
+
+
+                        <div class="first-center" > <!--Body first Center in-->
+                          
+
+                          <input id="searchbar" onkeyup="search_animal()" type="text"
+                          name="search" placeholder="আপনার গাণিতিক সমস্যাটি লিখুন">
+                        
+
+
+                        </div> <!--Body first Center Out-->
+                        <br>
+                        
+
+                        <div class="second-center" style=""> <!--Body Second Center In-->
+                          <!-- ordered list -->
+                      <ol id='list'>
+                        <li class="animals">Cat</li>
+                        <li class="animals">Dog</li>
+                        <li class="animals">Elephant</li>
+                        <li class="animals">Fish</li>
+                        <li class="animals">Gorilla</li>
+                        <li class="animals">Monkey</li>
+                        <li class="animals">Turtle</li>
+                        <li class="animals">Whale</li>
+                        <li class="animals">Aligator</li>
+                        <li class="animals">Donkey</li>
+                        <li class="animals">Horse</li>
+                      </ol>
+                      </div> <!--Body Second Center Out-->
+
+                        </div> <!--Search Bar and Output Section Out-->
+
+                              </div> <!--Body Center section Out-->   
+
+    
+
+        <div class="column right" style="background-image: linear-gradient(135deg,#f09c9cf3  10%, #fdfdfd 100%);" > <!--Body right section In-->
+            
+            
+            <div class="content"> <!--Hamburger button content In-->
+                
+                <div id="first"> <!--  First Image In-->
+                    
+                    <img src="undraw_education_f8ru.svg" />  <!--  First Image In-->
+                
+                    <div class="desc" > <!--content Decription In-->
+                        <h1 >Basic Mathametics</h1>
+                        <p>This Section contains Addition, Subtraction, Multiplication, Division etc.</p>
+                                    </div> <!--content Decription Out--> 
+                
+                </div> <!--  First Image Out-->
+                
+                <div id="second"> <!--  Second Image In-->
+
+                    <img src="numb.jpg"/> 
+                    <div class="desc" > <!--content Decription In-->
+                        <h1>Number System</h1>
+                        <p>A number system is defined as a system of writing to express numbers. It is the mathematical notation for representing numbers of a given set by using digits or other symbols in a consistent manner. It provides a unique representation of every number and represents the arithmetic and algebraic structure of the figures. </p>
+                                    </div> <!--content Decription Out--> 
+                </div> <!--  Second Image Out-->
+                
+                <div id="third"> <!--Third Image In-->
+                    <img src="algebra.jpg" alt="Notebook" >
+                                    
+                    <div class="desc" > <!--content Decription In-->
+        <h1>Algebra</h1>
+        <p>Algebra is a branch of mathematics dealing with symbols and the rules for manipulating those symbols.</p>
+                    </div> <!--content Decription Out--> 
+                </div> <!--Third Image Out-->
+             
+                        <div id="fourth"> <!--Fourth Image In-->
+                            
+                            <img src="Trigonometry-Mathematics-Tips.jpg"/> 
+                            <div class="desc" > <!--content Decription In-->
+                                <h1>Trigonometry</h1>
+                                <p>Trigonometry is a branch of mathematics that studies relationships between side lengths and angles of triangles. </p>
+                                            </div> <!--content Decription Out--> 
+                        
+                        </div> <!--Fourth Image Out-->
+                        <div id="fifth"> <!--Fifth Image In-->
+                            <img src="cal.jpg"/>
+                            <div class="desc" > <!--content Decription In-->
+                                <h1>Calculus</h1>
+                                <p>calculus, branch of mathematics concerned with the calculation of instantaneous rates of change (differential calculus) and the summation of infinitely many small factors to determine some whole (integral calculus). </p>
+                                            </div> <!--content Decription Out-->  
+                        </div> <!--Fifth Image Out-->
+                        <div id="sixth"> <!--Sixth Image In-->
+                            <img src="stat.jpg"/> 
+                            <div class="desc" > <!--content Decription In-->
+                                <h1>Statistics</h1>
+                                <p>Statistics is the discipline that concerns the collection, organization, analysis, interpretation, and presentation of data. In applying statistics to a scientific, industrial, or social problem, it is conventional to begin with a statistical population or a statistical model to be studied. </p>
+                                            </div> <!--content Decription Out--> 
+                        </div> <!--Sixth Image Out-->
+                        <div id="seventh"> <!--Seventh Image In-->
+                            <img src="Geom.jpg"/> 
+                            <div class="desc" > <!--content Decription In-->
+                                <h1>Geometry</h1>
+                                <p>Geometry is a branch of mathematics that studies the sizes, shapes, positions angles and dimensions of things.
+
+                                    Flat shapes like squares, circles, and triangles are a part of flat geometry and are called 2D shapes. These shapes have only 2 dimensions, the length and the width.</p>
+                                            </div> <!--content Decription Out--> 
+                        </div>   <!--Seventh Image Out-->
+             
+                </div> <!--Hamburger button content Out-->
+                
+                <!-- <iframe id="calr" src="\MM\calen\calendar.html" width="400" height="400"></iframe> -->
+
+        </div><!--Body right section Out-->
+    
+    
+    </div> <!--Wrapper Out-->
+
+
+
+
+
+
+    <script>
+
+
+      // JavaScript code for Search Content
+function search_animal() {
+  let input = document.getElementById('searchbar').value
+  input=input.toLowerCase();
+  let x = document.getElementsByClassName('animals');
+    
+  for (i = 0; i < x.length; i++) { 
+      if (!x[i].innerHTML.toLowerCase().includes(input)) {
+          x[i].style.display="none";
+      }
+      else {
+          x[i].style.display="list-item";                 
+      }
+  }
+}
+
+
+
+
+          
+        const myFunction = () => {
+            document.getElementById("first").style.display ='block';
+            document.getElementById("second").style.display ='none'
+            document.getElementById("third").style.display ='none'
+            document.getElementById("fourth").style.display ='none'
+            document.getElementById("fifth").style.display ='none'
+            document.getElementById("sixth").style.display ='none'
+            document.getElementById("seventh").style.display ='none'
+
+          }
+          
+          const myFunction1 = () => {
+            document.getElementById("second").style.display ='block'            
+            document.getElementById("third").style.display ='none'
+            document.getElementById("fourth").style.display ='none'
+            document.getElementById("fifth").style.display ='none'
+            document.getElementById("sixth").style.display ='none'
+            document.getElementById("seventh").style.display ='none'
+            document.getElementById("first").style.display ='none'
+          }
+          
+          const myFunction2 = () => {
+            document.getElementById("third").style.display ='block'
+            document.getElementById("first").style.display ='none'
+            document.getElementById("second").style.display ='none'
+            document.getElementById("fourth").style.display ='none'
+            document.getElementById("fifth").style.display ='none'
+            document.getElementById("sixth").style.display ='none'
+            document.getElementById("seventh").style.display ='none'
+          }
+          const myFunction3 = () => {
+            document.getElementById("fourth").style.display ='block'
+            document.getElementById("first").style.display ='none'
+            document.getElementById("second").style.display ='none'
+            document.getElementById("third").style.display ='none'
+            document.getElementById("fifth").style.display ='none'
+            document.getElementById("sixth").style.display ='none'
+            document.getElementById("seventh").style.display ='none'
+          }
+          const myFunction4 = () => {
+            document.getElementById("fifth").style.display ='block'
+            document.getElementById("fourth").style.display ='none'
+            document.getElementById("first").style.display ='none'
+            document.getElementById("second").style.display ='none'
+            document.getElementById("third").style.display ='none'
+            document.getElementById("sixth").style.display ='none'
+            document.getElementById("seventh").style.display ='none'
+          }
+          const myFunction5 = () => {
+            document.getElementById("sixth").style.display ='block'
+            document.getElementById("first").style.display ='none'
+            document.getElementById("second").style.display ='none'
+            document.getElementById("fourth").style.display ='none'
+            document.getElementById("third").style.display ='none'
+            document.getElementById("fifth").style.display ='none'
+            document.getElementById("seventh").style.display ='none'
+          }
+          const myFunction6 = () => {
+            document.getElementById("seventh").style.display ='block'
+            document.getElementById("first").style.display ='none'
+            document.getElementById("second").style.display ='none'
+            document.getElementById("sixth").style.display ='none'
+            document.getElementById("fourth").style.display ='none'
+            document.getElementById("third").style.display ='none'
+            document.getElementById("fifth").style.display ='none'
+           
+          }
+
+
+
+
+          const myFunction7 = () => {
+            document.getElementById("key").style.display ='block';
+            document.getElementById("mic").style.display ='none'
+            document.getElementById("cam").style.display ='none'
+          }
+
+          const myFunction8 = () => {
+            document.getElementById("mic").style.display ='block';
+            document.getElementById("key").style.display ='none'
+            document.getElementById("cam").style.display ='none'
+          }
+
+          const myFunction9 = () => {
+            document.getElementById("cam").style.display ='block';
+            document.getElementById("mic").style.display ='none'
+            document.getElementById("key").style.display ='none'
+          }
+
+              </script>
+</body>
+</html>
